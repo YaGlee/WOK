@@ -48,7 +48,7 @@ try:
 			    print(yes_color, "Country", "<--->", JSON_url['country'])
 			    print(yes_color, "City", "<--->", JSON_url['city'])
 			except KeyError:
-			    print(colored("Некоторые данные получить неудалось", 'red'))
+			    print(colored("I didn't get some information", 'red'))
 
 # ----------------------------------------------------------------------------
 		if command == "port-scan":
@@ -73,11 +73,11 @@ try:
 				    print(color_a + "Port -- ", port, " -- [OPEN]")
 
 			def fanc2():
-				Re_Select = int(input("[?] Вплоть до какого порта нужно провести сканирование?  "))
+				Re_Select = int(input("[?] Up to which port do you need to scan?  "))
 				print(colored("~"*50, 'cyan'))
-				print(colored("\t[0] - Показывать только закрытые", 'cyan'))
-				print(colored("\t[1] - Показывать только открытые", 'cyan'))
-				print(colored("\t[5] - Показывать все(до {})".format(Re_Select), 'cyan'))
+				print(colored("\t[0] - Show only closed", 'cyan'))
+				print(colored("\t[1] - Show only open", 'cyan'))
+				print(colored("\t[5] - Show all(before {})".format(Re_Select), 'cyan'))
 				print(colored("~"*50, 'cyan'))
 				select = int(input("[scan]-->  "))
 				color_a = colored("[+] ", 'green')
@@ -85,7 +85,7 @@ try:
 				color_c = colored("[!] ", 'white')
 
 				host = input(color_a + "Host --> ")
-				print(color_a+"Подождите пожалуйста, сканирование идет...")
+				print(color_a+"Wait please...")
 				print("\n")
 				port = []
 				check_list = []
@@ -147,8 +147,8 @@ try:
 
 			print(colored("~"*50, 'cyan'))
 
-			print(colored("\t[1] --- сканировать отделный порт", 'cyan'))
-			print(colored("\t[2] --- сканировать список", 'cyan'))
+			print(colored("\t[1] --- scan a separate port", 'cyan'))
+			print(colored("\t[2] --- scan a list", 'cyan'))
 
 			print(colored("~"*50+"\n", 'cyan'))
 			text_a = input("[scan]--> ")
@@ -158,7 +158,7 @@ try:
 			elif text_a == "2":
 			    fanc2()
 			else:
-			    print(colored("Параметр введен не правильно!", 'red'))
+			    print(colored("The parameter was entered incorrectly!", 'red'))
 # ----------------------------------------------------------------------------
 		if command == "phone":
 			yes_color = colored("[+]", 'green')
@@ -177,7 +177,7 @@ try:
 			    print(yes_color, "Operator", "<--->", JSON_url2['0']['oper'])
 			    print(yes_color, "Piece of light", "<--->", JSON_url2['country']['location'])
 			except KeyError:
-			    print(colored("Некоторые данные получить неудалось", 'red'))
+			    print(colored("I didn't get some information", 'red'))
 # ----------------------------------------------------------------------------
 except KeyboardInterrupt:
 	print("\n")
